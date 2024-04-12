@@ -1,0 +1,150 @@
+  3           0 LOAD_CONST               0 (102)
+              2 LOAD_CONST               1 (107)
+              4 LOAD_CONST               2 (99)
+              6 LOAD_CONST               3 (106)
+              8 LOAD_CONST               4 (119)
+             10 LOAD_CONST               5 (54)
+             12 LOAD_CONST               6 (128)
+             14 LOAD_CONST               7 (73)
+             16 LOAD_CONST               8 (114)
+             18 LOAD_CONST               9 (104)
+             20 LOAD_CONST               0 (102)
+             22 LOAD_CONST               8 (114)
+             24 LOAD_CONST               6 (128)
+             26 LOAD_CONST              10 (91)
+             28 LOAD_CONST              11 (62)
+             30 LOAD_CONST              12 (125)
+             32 LOAD_CONST              13 (79)
+             34 LOAD_CONST              14 (115)
+             36 LOAD_CONST              15 (139)
+             38 LOAD_CONST              16 (97)
+             40 LOAD_CONST              17 (39)
+             42 LOAD_CONST              18 (120)
+             44 LOAD_CONST              19 (26)
+             46 LOAD_CONST              14 (115)
+             48 LOAD_CONST              20 (75)
+             50 LOAD_CONST              21 (70)
+             52 LOAD_CONST               9 (104)
+             54 LOAD_CONST              22 (78)
+             56 LOAD_CONST              23 (90)
+             58 LOAD_CONST              24 (46)
+             60 LOAD_CONST              25 (144)
+             62 LOAD_CONST              26 (84)
+             64 LOAD_CONST              27 (19)
+             66 LOAD_CONST               6 (128)
+             68 LOAD_CONST              28 (17)
+             70 LOAD_CONST              29 (77)
+             72 LOAD_CONST              15 (139)
+             74 LOAD_CONST              30 (68)
+             76 LOAD_CONST              31 (72)
+             78 LOAD_CONST              23 (90)
+             80 LOAD_CONST              32 (11)
+             82 LOAD_CONST              10 (91)
+             84 LOAD_CONST              33 (147)
+             86 LOAD_CONST              34 (67)
+             88 LOAD_CONST              35 (21)
+             90 LOAD_CONST              36 (170)
+             92 BUILD_LIST              46
+             94 STORE_NAME               0 (magic)
+
+  5          96 LOAD_NAME                1 (input)
+             98 LOAD_CONST              37 ('What the flag? ')
+            100 CALL_FUNCTION            1
+            102 STORE_NAME               2 (flag)
+
+ 19         104 LOAD_CONST              38 (<code object gg at 0x00000223ABAF6970, file "chall.py", line 5>)
+            106 LOAD_CONST              39 ('gg')
+            108 MAKE_FUNCTION            0
+            110 STORE_NAME               3 (gg)
+            112 LOAD_NAME                4 (print)
+            114 LOAD_NAME                3 (gg)
+            116 LOAD_NAME                2 (flag)
+            118 CALL_FUNCTION            1
+            120 CALL_FUNCTION            1
+            122 POP_TOP
+            124 LOAD_CONST              40 (None)
+            126 RETURN_VALUE
+
+Disassembly of <code object gg at 0x00000223ABAF6970, file "chall.py", line 5>:
+  7           0 BUILD_LIST               0
+              2 STORE_FAST               1 (tmp)
+
+  8           4 LOAD_GLOBAL              0 (range)
+              6 LOAD_GLOBAL              1 (len)
+              8 LOAD_FAST                0 (inp)
+             10 CALL_FUNCTION            1
+             12 CALL_FUNCTION            1
+             14 GET_ITER
+             16 FOR_ITER               110 (to 238)
+             18 STORE_FAST               2 (i)
+
+  9          20 LOAD_FAST                2 (i)
+             22 LOAD_CONST               1 (3)
+             24 BINARY_MODULO
+             26 LOAD_CONST               2 (0)
+             28 COMPARE_OP               2 (==)
+             30 POP_JUMP_IF_FALSE       60 (to 120)
+
+ 10     >>   32 LOAD_FAST                1 (tmp)
+             34 LOAD_METHOD              2 (append)
+             36 LOAD_GLOBAL              3 (ord)
+             38 LOAD_FAST                0 (inp)
+             40 LOAD_FAST                2 (i)
+             42 BINARY_SUBSCR
+             44 CALL_FUNCTION            1
+             46 LOAD_FAST                2 (i)
+             48 BINARY_ADD
+             50 LOAD_CONST               3 (255)
+             52 BINARY_AND
+             54 CALL_METHOD              1
+             56 POP_TOP
+             58 JUMP_ABSOLUTE           16 (to 32)
+
+ 11          60 LOAD_FAST                2 (i)
+             62 LOAD_CONST               1 (3)
+             64 BINARY_MODULO
+             66 LOAD_CONST               4 (2)
+             68 COMPARE_OP               2 (==)
+             70 POP_JUMP_IF_FALSE      100 (to 200)
+
+ 13          72 LOAD_FAST                1 (tmp)
+             74 LOAD_METHOD              2 (append)
+             76 LOAD_GLOBAL              3 (ord)
+             78 LOAD_FAST                0 (inp)
+             80 LOAD_FAST                2 (i)
+             82 BINARY_SUBSCR
+             84 CALL_FUNCTION            1
+             86 LOAD_FAST                2 (i)
+             88 LOAD_CONST               3 (255)
+             90 BINARY_AND
+             92 BINARY_XOR
+             94 CALL_METHOD              1
+             96 POP_TOP
+             98 JUMP_ABSOLUTE           16 (to 32)
+
+ 14         100 LOAD_FAST                1 (tmp)
+            102 LOAD_METHOD              2 (append)
+            104 LOAD_GLOBAL              3 (ord)
+            106 LOAD_FAST                0 (inp)
+            108 LOAD_FAST                2 (i)
+            110 BINARY_SUBSCR
+            112 CALL_FUNCTION            1
+            114 LOAD_FAST                2 (i)
+            116 BINARY_SUBTRACT
+            118 LOAD_CONST               3 (255)
+        >>  120 BINARY_AND
+            122 CALL_METHOD              1
+            124 POP_TOP
+            126 JUMP_ABSOLUTE           16 (to 32)
+
+ 15         128 LOAD_FAST                1 (tmp)
+            130 LOAD_GLOBAL              4 (magic)
+            132 COMPARE_OP               2 (==)
+            134 POP_JUMP_IF_FALSE      140 (to 280)
+
+ 17         136 LOAD_CONST               5 ('Correct!!!')
+            138 RETURN_VALUE
+            140 LOAD_CONST               6 ('Incorrect!!!')
+            142 RETURN_VALUE
+            144 LOAD_CONST               0 (None)
+            146 RETURN_VALUE

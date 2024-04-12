@@ -1,0 +1,3 @@
+jadx-gui
+strings.xml
+crackstation
